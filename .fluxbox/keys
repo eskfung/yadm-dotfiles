@@ -1,0 +1,57 @@
+!Mouse Events
+OnDesktop Mouse1 :HideMenus
+OnDesktop Mouse2 :WorkspaceMenu
+OnDesktop Mouse3 :RootMenu
+OnDesktop Mouse4 :PrevWorkspace
+OnDesktop Mouse5 :NextWorkspace
+
+!Workspaces
+Mod4 1 :SendToWorkspace 1
+Mod4 2 :SendToWorkspace 2
+Mod4 3 :SendToWorkspace 3
+Mod4 4 :SendToWorkspace 4
+
+Mod1 1 :Workspace 1
+Mod1 2 :Workspace 2
+Mod1 3 :Workspace 3
+Mod1 4 :Workspace 4
+
+!Navigation
+Mod1 Tab :NextWindow
+Mod1 Shift Tab :PrevWindow
+Control Next :NextTab
+Control Prior :PrevTab
+
+!Windows-like Keys
+Mod1 F4 :Close
+Mod4 D :ToggleCmd {ShowDesktop} {DeIconify all originquiet}
+Control Mod1 L :Exec xscreensaver-command -lock
+
+!Fluxbox
+Mod4 Space :Exec fbrun
+Scroll_Lock :Exec fbrun
+Control Mod1 Delete :Exec xkill
+Mod4 Shift R :Restart 
+Control Mod1 BackSpace :Exec exit
+
+!Window Managment
+Mod4 Mod1 Right :MoveRight 20
+Mod4 Mod1 Left :MoveLeft 20
+Mod4 Mod1 Up :MoveUp 20
+Mod4 Mod1 Down :MoveDown 20
+
+Shift Mod1 Right :Resize +10 -0
+Shift Mod1 Left :Resize -10 -0
+Shift Mod1 Up :Resize -0 -10
+Shift Mod1 Down :Resize -0 +10
+
+!Executables
+Mod1 F3 :Exec xterm 
+Mod4 F3 :Exec gnome-terminal
+Mod4 N :Exec nautilus --no-desktop --browser
+
+Mod4 P :Exec pidgin
+F9  :Exec pidgin
+F10 :Exec calagenda
+F11 :Exec thunar
+F12 :Exec firefox

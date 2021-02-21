@@ -1,0 +1,24 @@
+# Let's remove some dangerous key bindings ...
+bind k
+bind ^k
+bind .
+bind ^\
+bind \\
+bind ^h
+bind h
+
+# ... and make them better.
+bind 'K' kill
+bind 'I' login on
+bind 'O' login off
+bind '}' history
+
+# Remove startup message
+startup_message off
+
+# Visual Bell Settings
+vbell on
+vbell_msg "---Wokka wokka wokka!---"
+
+# Status bar at the bottom
+hardstatus alwayslastline '%{= kM}[ %{G}%H %{M}][%= %{= kw}%?%-Lw%?%{r}(%{Y}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{M}][%{C} %M %d, %Y %{M}]'

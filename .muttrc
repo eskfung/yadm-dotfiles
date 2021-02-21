@@ -1,0 +1,88 @@
+# .muttrc
+# Mutt 1.5.16
+# Compiled by Eric Fung with assistance from http://www.muttrcbuilder.org/
+
+# Identification
+set from='efung@rescomp.berkeley.edu'    # Set to your from address
+set realname='Eric Fung'        # Set to your real name
+
+# General Settings
+
+# Sets vim as text editor, with functional text wrapping at 78 columns
+set editor="vim +':set textwidth=78' +':set wrap' +'set fo=tcoqwan'"
+
+set mbox_type='Maildir'       # Store mail in directories rather than one file
+set folder='~/mail'                 # Choose default mail folder
+set mbox='~/mail/inbox'             # Save messages to inbox
+set record='~/mail/sent'            # Sent mail saved here
+set postponed='~/mail/postponed'    # Unfinished drafts saved here
+set signature='~/.signature'        # Use signature from this file
+
+set move=yes              # Moves mail from server to inbox without a prompt
+set mark_old=no           # Don't distinguish "old" unread messages
+set delete=yes            # Delete messages without a prompt (ask-yes)
+set include=yes           # Quote msg in reply
+set fast_reply=yes        # No prompting on reply
+set beep=no               # No noise
+set markers=no            # No + on wrapped lines
+set confirmappend=no      # No confirmation on saving messages to other mbox
+
+# Interface Settings 
+set status_on_top=yes         # Put status line at top
+set pager_index_lines=5       # Show a mini-index in pager view
+set pager_context=2           # Keep two lines in pager when paging up and down
+set menu_scroll=yes           # Scrolls mail by line instead of in bulk 
+set sort=threads              # Sort by message threads in index
+set sort_browser=alpha        # Sort folders in filebrowser alphabetically
+
+set status_format=' %r %f %l    Unread: %u  Del: %d  Msgs Shown: %M %> %V [%P] '
+set pager_format=' %a %> %[%a, %b %d  %R] '
+set index_format='%4C %Z %[%b%d] %-15.15F %s'
+set folder_format='%2C %8s %d %N %f'
+
+# Ignore everything, but then allow what you want to see
+ignore *
+unignore  Date To Cc From Subject X-Mailer Organization User-Agent
+hdr_order Date From To Cc Subject X-Mailer User-Agent Organization
+
+# Folder hooks and save hooks
+folder-hook . 'set from="efung@rescomp.berkeley.edu"'
+
+# Auto-view all text formats
+set implicit_autoview
+
+# But always prefer to display plain text
+alternative_order application/pgp text/plain text/html
+
+#PGP Settings
+set pgp_autosign                # Automatically sign outgoing mail
+set pgp_replyencrypt            # Encrypt replies on encrypted mail
+set pgp_replysign               # Sign replies on signed mail
+set pgp_replysignencrypted      # Sign replies on encrypted mail
+set pgp_show_unusable=no        # Don't offer invalid keys on the PGP menuset
+set pgp_timeout=7200            # Forget PGP passphrase after 7200 sec (2 hours)
+
+
+# Mailbox Listing
+mailboxes `echo $HOME/mail/*`
+
+# Custom Keybindings
+bind index J next-unread
+bind index K previous-unread
+bind index G last-entry
+bind pager J next-unread
+bind pager K previous-unread
+bind pager h display-toggle-weed
+bind pager <Up> previous-line
+bind pager <Down> next-line
+
+bind index P print-message
+bind pager P print-message
+bind index p parent-message
+bind pager p parent-message
+bind index F flag-message
+bind pager F flag-message
+
+# Source from separate files 
+source ~/.mutt/colors
+source ~/.mutt/aliases

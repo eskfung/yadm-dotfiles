@@ -1,0 +1,17 @@
+[app] (name=fbrun) (class=FbRun)
+  [Position]	(UPPERLEFT)	{577 524}
+[end]
+[app] (name=pidgin) (class=Pidgin) (role=conversation)
+  [Deco]	{NORMAL}
+[end]
+[app] (name=pidgin) (class=Pidgin) (role=buddy_list)
+  [Dimensions]	{335 984}
+  [Position]	(UPPERLEFT)	{943 27}
+  [Deco]	{NORMAL}
+  [Sticky]	{yes}
+[end]
+[app] (name=xterm) (class=XTerm)
+  [Head]	{1}
+  [Dimensions]	{571 957}
+  [Sticky]	{yes}
+[end]
