@@ -1,6 +1,6 @@
 [user]
-  name = Eric Fung
-  email = eskfung@gmail.com
+	name = Eric Fung
+	email = eskfung@gmail.com
   signingkey = 215EAF80
 [color]
   ui = true
@@ -24,7 +24,8 @@
 [core]
   autocrlf = input
   safecrlf = false
-  excludesfile = ~/.gitignore_global
+  excludesfile = /Users/efung/.gitignore_global
+	editor = vim
 [push]
   default = simple
   followTags = true
@@ -32,15 +33,25 @@
   clean = git-media-clean %f
   smudge = git-media-smudge %f
 [filter "lfs"]
-  clean = git-lfs clean %f
-  smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
   required = true
+	process = git-lfs filter-process
 [commit]
   gpgsign = true
 [diff]
   compactionHeuristic = true
   noprefix = true
+	colorMoved = zebra
 [init]
 	defaultBranch = main
 [pull]
 	rebase = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[fetch]
+	prune = true
