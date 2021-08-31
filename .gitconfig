@@ -1,31 +1,31 @@
 [user]
-	name = Eric Fung
-	email = eskfung@gmail.com
+  name = Eric Fung
+  email = eskfung@gmail.com
   signingkey = 215EAF80
 [color]
   ui = true
 [alias]
+  br = branch
+  ci = commit
   co = checkout
   st = status
-  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-  type = cat-file -t
-  dump = cat-file -p
-  ci = commit
-  br = branch
-  today = log --stat --since=\"1 Day Ago\" --graph --pretty=oneline --abbrev-commit --date=relative
-  searchlogs = !git log --oneline | grep
-  details = log -n1 -p --format=fuller
   amend = commit --amend
-  unstage = reset HEAD
+  branches = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
+  details = log -n1 -p --format=fuller
+  dump = cat-file -p
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all --date=local
+  searchlogs = !git log --oneline | grep
   shove = push -u origin HEAD
-  branches = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
+  today = log --stat --since=\"1 Day Ago\" --graph --pretty=oneline --abbrev-commit --date=relative
+  type = cat-file -t
+  unstage = reset HEAD
 [core]
   autocrlf = input
-  safecrlf = false
+  editor = vim
   excludesfile = /Users/efung/.gitignore_global
-	editor = vim
+  safecrlf = false
 [push]
   default = simple
   followTags = true
@@ -33,25 +33,19 @@
   clean = git-media-clean %f
   smudge = git-media-smudge %f
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
   required = true
-	process = git-lfs filter-process
+  process = git-lfs filter-process
 [commit]
   gpgsign = true
 [diff]
+  colorMoved = zebra
   compactionHeuristic = true
   noprefix = true
-	colorMoved = zebra
 [init]
-	defaultBranch = main
+  defaultBranch = main
 [pull]
-	rebase = true
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  rebase = true
 [fetch]
-	prune = true
+  prune = true
