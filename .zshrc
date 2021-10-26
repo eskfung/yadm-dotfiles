@@ -1,3 +1,6 @@
+# Autocompletion
+autoload -Uz compinit && compinit
+
 unsetopt EXTENDED_GLOB
 
 alias hl='heroku local'
