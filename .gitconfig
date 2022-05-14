@@ -1,6 +1,6 @@
 [user]
   name = Eric Fung
-  email = eskfung@users.noreply.github.com
+  email = eskfung@gmail.com
   signingkey = 215EAF80
 [color]
   ui = true
@@ -25,6 +25,7 @@
   autocrlf = input
   editor = vim
   excludesfile = /Users/efung/.gitignore_global
+  pager = delta
   safecrlf = false
 [push]
   default = simple
@@ -40,7 +41,7 @@
 [commit]
   gpgsign = true
 [diff]
-  colorMoved = zebra
+  colorMoved = default
   compactionHeuristic = true
   noprefix = true
 [init]
@@ -51,4 +52,10 @@
   prune = true
 [rebase]
   autoStash = true
-
+[interactive]
+  diffFilter = delta --color-only
+[merge]
+  conflictstyle = diff3
+[delta]            # https://github.com/dandavison/delta
+  navigate = true  # use n and N to move between diff sections
+  light = false    # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)

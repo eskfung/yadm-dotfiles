@@ -20,7 +20,6 @@
 *.rar
 *.tar
 *.zip
-node_modules
 
 # OS generated files #
 ######################
@@ -37,6 +36,12 @@ Thumbs.db
 *.swp
 
 .tool-versions
+
+# Node
+node_modules
+
+# Ruby
+.byebug_history
 
 # Xcode
 xcuserdata/
