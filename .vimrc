@@ -34,7 +34,7 @@ filetype indent on
 autocmd BufWritePre * :%s/\s\+$//e
 
 set background=dark
-colorscheme monokai
+colorscheme desert
 
 " Correct your typos
 command! Q  quit
