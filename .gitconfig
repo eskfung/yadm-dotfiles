@@ -1,7 +1,7 @@
 [user]
   name = Eric Fung
   email = eskfung@gmail.com
-  signingkey = 215EAF80
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMesldDQ23x8mKz6Lvv1aNIlmPKhg7xKRMxdkyhJNJ9p
 [color]
   ui = true
 [alias]
@@ -59,3 +59,7 @@
 [delta]            # https://github.com/dandavison/delta
   navigate = true  # use n and N to move between diff sections
   light = false    # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
