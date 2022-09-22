@@ -1,6 +1,6 @@
 [user]
   name = Eric Fung
-  email = eskfung@gmail.com
+  email = eskfung@users.noreply.github.com
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMesldDQ23x8mKz6Lvv1aNIlmPKhg7xKRMxdkyhJNJ9p
 [color]
   ui = true
@@ -17,7 +17,7 @@
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all --date=local
   searchlogs = !git log --oneline | grep
-  shove = push -u origin HEAD
+  shove = push -u origin HEAD --no-verify
   today = log --stat --since=\"1 Day Ago\" --graph --pretty=oneline --abbrev-commit --date=relative
   type = cat-file -t
   unstage = reset HEAD
