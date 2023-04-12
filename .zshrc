@@ -2,8 +2,7 @@
 autoload -Uz compinit && compinit
 
 unsetopt EXTENDED_GLOB
-
-alias hl='heroku local'
+unsetopt NOMATCH
 
 # Yarn-managed binaries
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

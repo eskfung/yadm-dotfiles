@@ -24,7 +24,7 @@
 [core]
   autocrlf = input
   editor = vim
-  excludesfile = /Users/efung/.gitignore_global
+  excludesfile = ~/.gitignore_global
   pager = delta
   safecrlf = false
 [push]
