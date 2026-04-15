@@ -28,7 +28,6 @@
   pager = delta
   safecrlf = false
 [push]
-  default = simple
   followTags = true
 [filter "media"]
   clean = git-media-clean %f
@@ -40,6 +39,7 @@
   process = git-lfs filter-process
 [commit]
   gpgsign = true
+  template = ~/.gittemplate
 [diff]
   colorMoved = default
   compactionHeuristic = true

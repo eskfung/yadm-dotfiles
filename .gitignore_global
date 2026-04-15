@@ -45,3 +45,10 @@ node_modules
 
 # Xcode
 xcuserdata/
+
+env.test.js
+*.code-workspace
+
+# Git Worktrees
+worktrees/
+.worktrees/

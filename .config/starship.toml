@@ -1,3 +1,9 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = false
+
 [aws]
 symbol = "  "
 
@@ -98,6 +104,7 @@ symbol = "󰆥 "
 symbol = " "
 
 [nodejs]
+disabled = true
 symbol = " "
 
 [ocaml]
@@ -172,6 +179,7 @@ symbol = " "
 symbol = "󰟔 "
 
 [ruby]
+disabled = true
 symbol = " "
 
 [rust]
